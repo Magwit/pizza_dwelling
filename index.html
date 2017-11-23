@@ -18,7 +18,9 @@
 
       <template v-for="(pizza, index) in pizzas">
         <p>{{pizza.name}} {{pizza.prize}}  </p>
-        <button v-on:click="addItem(pizza.name, index, pizza.prize)">Order Btn {{index}}</button>
+        <!-- <button v-on:click="addItem(pizza.name, index, pizza.prize)">Order Btn {{index}}</button> -->
+        <button v-on:click="hasVegan(pizza.name, index, pizza.prize)">hasVegan</button>
+
       </template>
     </div>
 

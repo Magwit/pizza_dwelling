@@ -18,8 +18,8 @@
 
       <template v-for="(pizza, index) in pizzas">
         <p>{{pizza.name}} {{pizza.prize}}  </p>
-        <button v-on:click="addItem(pizza.name, index, pizza.prize)">Add item on index: {{index}}</button>
-        <!-- <button v-on:click="incrementSum(pizza.name, index, pizza.prize)">Increment sum on index {{index}} </button> -->
+        <!-- <button v-on:click="addItem(pizza.name, index, pizza.prize)">Add item on index: {{index}}</button> -->
+        <button v-on:click="findMe(pizza.name, index, pizza.prize)">Find me </button>
 
       </template>
     </div>
@@ -28,7 +28,7 @@
       <h2>Order</h2>
 
       <ul v-for="item in order">
-        <li>{{item.name}} {{item.prize}} Sum: {{item.sum  }} Index : {{ ii }}</li>
+        <li>{{item.name}} {{item.prize}} Sum: {{item.sum  }} orderIndex : {{ item.orderIndex }}</li>
       </ul>
       <span>Order sum placeholder<button>Cancel</button></span>
     </div>

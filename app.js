@@ -34,5 +34,13 @@ new Vue({
       }
     }
   },
-  computed: {} // Order total
+  computed: {
+    orderTotal: function() {
+      let result = 0;
+      for (ii = 0; ii < this.order.length; ii++) {
+        result += this.order[ii].sum;
+      }
+      return result;
+    }
+  } // Order total
 });

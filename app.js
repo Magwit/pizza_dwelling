@@ -18,7 +18,7 @@ new Vue({
     order: []
   },
   methods: {
-    findMe: function(k, i, p) {
+    addToOrder: function(k, i, p) {
       // DONE: Use the idea about .find or findIndex below
       // https://stackoverflow.com/a/45194601
       // https://stackoverflow.com/a/41938641
@@ -30,7 +30,19 @@ new Vue({
       } else {
         console.log("We have a orderId " + i + " already");
         this.order[objIndex].qty++;
-        this.order[objIndex].sum *= this.order[objIndex].qty;
+        this.order[objIndex].sum =
+          this.order[objIndex].qty * this.order[objIndex].prize;
+        // I need functional programming...
+      }
+    },
+    editQty: function(i, a) {
+      console.log(a);
+      this.order[i].qty += a;
+      if (this.order[i].qty <= 0) {
+        this.order.splice(i, 1);
+      } else {
+        this.order[i].sum = this.order[i].prize * this.order[i].qty; // candidate for computed property
+        // this.subTotal(i);
       }
     }
   },
@@ -42,5 +54,13 @@ new Vue({
       }
       return result;
     }
-  } // Order total
+    // dead function
+    /*
+    subTotal: function(iii) {
+      let result = 0;
+      result = this.order[iii].prize * this.order[iii].qty;
+      return result;
+    }
+    */
+  }
 });

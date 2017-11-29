@@ -5,33 +5,33 @@
   <meta charset="utf-8">
   <title>The Pizza Dwelling</title>
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/acro-script" type="text/css"/>
   <link rel="stylesheet" href="styles.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
   <div id="vue-app">
-    <h1>The Pizza Dwelling</h1>
-
-    <div class="menu">
-      <h2>Looped Array Menu</h2>
-
-      <template v-for="(pizza, index) in pizzas">
-        <p>{{pizza.name}} {{pizza.prize}} <button v-on:click="addToOrder(pizza.name, index, pizza.prize)">Add to Order </button> </p>
-        <!-- <button v-on:click="addItem(pizza.name, index, pizza.prize)">Add item on index: {{index}}</button> -->
+    <h1 id="mainHeading">The Pizza Dwelling</h1>
+    <div class="flex-container">
 
 
-      </template>
-    </div>
+      <div class="box menu">
+        <h2>Menu</h2>
+        <template v-for="(pizza, index) in pizzas">
+        <p>{{pizza.name}} {{pizza.prize}} <button v-on:click="addToOrder(pizza.name, index, pizza.prize)">Add to Order </button></p>
+        </template>
+      </div>
 
-    <div class="order">
-      <h2>Order</h2>
+      <div class="box order">
+        <h2>Order</h2>
 
-      <ul v-for="(item, index) in order">
-        <li>{{item.name}}  Price: {{item.prize}} Qty: {{ item.qty }} Sum: {{ item.sum  }} <button v-on:click='editQty(index, 1)'>+</button> <button v-on:click='editQty(index, -1)'>-</button></li>
-      </ul>
-      <span>Total: {{ orderTotal }}<button v-on:click="order = []">Cancel</button></span>
+        <ul v-for="(item, index) in order">
+          <li>{{item.name}} Price: {{item.prize}} Qty: {{ item.qty }} Sum: {{ item.sum }} <button v-on:click='editQty(index, 1)'>+</button> <button v-on:click='editQty(index, -1)'>-</button></li>
+        </ul>
+        <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button></span>
 
+      </div>
     </div>
   </div>
 

@@ -54,7 +54,11 @@ new Vue({
       }
       return result;
     }
-    // dead function
+    // https://www.npmjs.com/package/vue-numeric
+
+    //Subtotal is computed on two lines 44 and 33 - 34
+    // It is not DRY and is a good candidate for a method or computed property
+    // failed function attempt below
     /*
     subTotal: function(iii) {
       let result = 0;

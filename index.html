@@ -26,10 +26,20 @@
       <div class="box order">
         <h2>Order</h2>
 
-        <ul v-for="(item, index) in order">
+      <!-- <ul v-for="(item, index) in order">
           <li>{{item.name}} Price: {{item.prize}} Qty: {{ item.qty }} Sum: {{ item.sum }} <button v-on:click='editQty(index, 1)'>+</button> <button v-on:click='editQty(index, -1)'>-</button></li>
         </ul>
         <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button></span>
+      -->
+
+      <form method="post" v-on:submit.prevent>
+        <template v-for="(item, index) in order">
+            <input type="text" v-bind:value="item.name">  <input type="text" v-bind:value="item.prize"> X  <input type="text" v-bind:value="item.qty">  <input type="text" v-bind:value="item.sum">
+            <br>
+        </template>
+        <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button>
+        <button type="submit" name="button" >Submit</button></span>
+      </form>
 
       </div>
     </div>

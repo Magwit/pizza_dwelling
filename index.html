@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>The Pizza Dwelling</title>
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css" />
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/acro-script" type="text/css"/>
@@ -40,11 +42,13 @@
             <input type="text" v-bind:value="item.sum" readonly>
             <button v-on:click='editQty(index, -1)'>-</button>
             <button v-on:click='editQty(index, 1)'>+</button>
-
             <br>
+
         </template>
+        <br>
         <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button>
         <button type="submit" name="button" >Submit</button></span>
+
       </form>
 
       </div>

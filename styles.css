@@ -4,7 +4,8 @@
   background-color: LightCyan;
 }
 
-h1 {
+#mainHeading {
+  text-align: center;
   font-size: 6vmax;
 }
 
@@ -27,23 +28,21 @@ li {
 }
 
 .box {
-  height: 35vh;
+  height: 40vmin;
   flex-basis: 400px;
   flex-grow: 1;
-  padding: 1rem;
+  /*padding: 1rem;*/
+  /*padding: 15px, 1rem, 0, 1rem;*/
+  /*padding: 4vh 10vw 10vh 10vw;*/
   border: 1px solid lightgray;
   position: relative;
 }
 
 #total {
-  position: absolute;
-  top: 210px;
-  left: 52px;
+  /*position: absolute;
+  bottom: 0.5vmax;
+  left: 0vh;*/
   /*text-decoration: underline;*/
-}
-
-#mainHeading {
-  text-align: center;
 }
 
 input {
@@ -64,5 +63,5 @@ button {
 .menu button {
   /*padding: 0.4rem;*/
   position: absolute;
-  left: 10rem;
+  left: 20rem;
 }

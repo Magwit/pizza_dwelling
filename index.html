@@ -19,7 +19,7 @@
       <div class="box menu">
         <h2>Menu</h2>
         <template v-for="(pizza, index) in pizzas">
-        <p>{{pizza.name}} {{pizza.prize}} <button v-on:click="addToOrder(pizza.name, index, pizza.prize)">Add to Order </button></p>
+        <p>{{pizza.name}} {{pizza.prize.toFixed(2) }} <button v-on:click="addToOrder(pizza.name, index, pizza.prize)">Add to Order </button></p>
         </template>
       </div>
 

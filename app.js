@@ -26,13 +26,30 @@ new Vue({
       let objIndex = this.order.findIndex(obj => obj.orderId === i); // assign
       console.log("The objIndex is " + objIndex);
       if (objIndex === -1) {
-        this.order.push({ qty: 1, name: k, prize: p, sum: p, orderId: i });
+        this.order.push({
+          qty: 1,
+          name: k,
+          prize: p.toFixed(2),
+          sum: p.toFixed(2),
+          orderId: i
+        });
       } else {
         console.log("We have a orderId " + i + " already");
+        let result = 0;
         this.order[objIndex].qty++;
+        /*
         this.order[objIndex].sum =
           this.order[objIndex].qty * this.order[objIndex].prize;
-        // I need functional programming...
+        */
+        /*
+        result = (
+          this.order[objIndex].qty * this.order[objIndex].prize
+        ).toFixed(2);
+        this.order[objIndex].sum = result;
+        */
+        this.order[objIndex].sum = (
+          this.order[objIndex].qty * this.order[objIndex].prize
+        ).toFixed(2);
       }
     },
     editQty: function(i, a) {
@@ -41,6 +58,7 @@ new Vue({
       if (this.order[i].qty <= 0) {
         this.order.splice(i, 1);
       } else {
+        //let result = 0
         this.order[i].sum = this.order[i].prize * this.order[i].qty; // candidate for computed property
         // this.subTotal(i);
       }
@@ -50,9 +68,10 @@ new Vue({
     orderTotal: function() {
       let result = 0;
       for (ii = 0; ii < this.order.length; ii++) {
-        result += this.order[ii].sum;
+        result += parseFloat(this.order[ii].sum);
+        // result += this.order[ii].sum.toFixed(2);
       }
-      return result;
+      return result.toFixed(2);
     }
     // https://www.npmjs.com/package/vue-numeric
 

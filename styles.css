@@ -1,9 +1,5 @@
 * {
   font-family: "nunito sans", sans-serif;
-  /*font-family: "H0bbyofnightRegular", sans-serif;*/
-  /*font-family: "BrividoNormal", sans-serif;*/
-  /*font-weight: normal;
-  font-style: normal;*/
   color: MidnightBlue;
   background-color: LightCyan;
 }
@@ -11,14 +7,7 @@
 h1,
 h2 {
   font-family: "acroscriptRegular", sans-serif;
-  /*font-weight: normal;
-  font-style: normal;*/
 }
-
-/*li,
-span {
-  font-family: "nunito sans", sans-serif;
-}*/
 
 li {
   list-style: none;
@@ -36,14 +25,6 @@ li {
   padding: 1rem;
   border: 1px solid lightgray;
   position: relative;
-}
-
-.menu {
-  /*background-color: lightgray;*/
-}
-
-.order {
-  /*background-color: gray;*/
 }
 
 #total {

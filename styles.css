@@ -5,7 +5,11 @@
 }
 
 h1 {
-  font-size: 6vw;
+  font-size: 6vmax;
+}
+
+h2 {
+  font-size: 3vmax;
 }
 
 h1,

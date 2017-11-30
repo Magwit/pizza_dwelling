@@ -4,6 +4,10 @@
   background-color: LightCyan;
 }
 
+h1 {
+  font-size: 6vw;
+}
+
 h1,
 h2 {
   font-family: "acroscriptRegular", sans-serif;
@@ -19,7 +23,7 @@ li {
 }
 
 .box {
-  height: 250px;
+  height: 35vh;
   flex-basis: 400px;
   flex-grow: 1;
   padding: 1rem;
@@ -38,15 +42,14 @@ li {
   text-align: center;
 }
 
-/*#order_form {
-  background-color: lightgray;
-}*/
-
 input {
-  /*color: deeppink;*/
-  width: 6rem;
+  width: 3rem;
   border: none;
   font-size: inherit;
+}
+
+.wide_input {
+  width: 7rem;
 }
 
 button {
@@ -59,9 +62,3 @@ button {
   position: absolute;
   left: 10rem;
 }
-
-/*input[type="number"] {
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
-  width: 60px;
-}*/

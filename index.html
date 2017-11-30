@@ -34,10 +34,13 @@
 
       <form method="post" v-on:submit.prevent>
         <template v-for="(item, index) in order">
-            <input type="text" v-bind:value="item.name" readonly>
-            <input type="text" v-bind:value="item.prize" readonly> X
+            <input type="text" v-bind:value="item.name" readonly class="wide_input">
+            <input type="text" v-bind:value="item.prize" readonly> x
             <input type="text" v-bind:value="item.qty" readonly>
             <input type="text" v-bind:value="item.sum" readonly>
+            <button v-on:click='editQty(index, -1)'>-</button>
+            <button v-on:click='editQty(index, 1)'>+</button>
+
             <br>
         </template>
         <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button>

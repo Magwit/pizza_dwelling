@@ -58,9 +58,9 @@ new Vue({
       if (this.order[i].qty <= 0) {
         this.order.splice(i, 1);
       } else {
-        //let result = 0
-        this.order[i].sum = this.order[i].prize * this.order[i].qty; // candidate for computed property
-        // this.subTotal(i);
+        let result = 0;
+        result = (this.order[i].prize * this.order[i].qty).toFixed(2); // candidate for computed property
+        this.order[i].sum = result;
       }
     }
   },

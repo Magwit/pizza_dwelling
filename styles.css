@@ -4,18 +4,18 @@
   background-color: LightCyan;
 }
 
-#mainHeading {
+h1,
+h2 {
+  font-family: "acroscriptRegular", sans-serif;
+}
+
+h1 {
   text-align: center;
   font-size: 6vmax;
 }
 
 h2 {
   font-size: 3vmax;
-}
-
-h1,
-h2 {
-  font-family: "acroscriptRegular", sans-serif;
 }
 
 li {

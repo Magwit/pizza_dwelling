@@ -19,10 +19,6 @@ new Vue({
   },
   methods: {
     addToOrder: function(k, i, p) {
-      // DONE: Use the idea about .find or findIndex below
-      // https://stackoverflow.com/a/45194601
-      // https://stackoverflow.com/a/41938641
-
       let objIndex = this.order.findIndex(obj => obj.orderId === i); // assign
       console.log("The objIndex is " + objIndex);
       if (objIndex === -1) {
@@ -37,16 +33,6 @@ new Vue({
         console.log("We have a orderId " + i + " already");
         let result = 0;
         this.order[objIndex].qty++;
-        /*
-        this.order[objIndex].sum =
-          this.order[objIndex].qty * this.order[objIndex].prize;
-        */
-        /*
-        result = (
-          this.order[objIndex].qty * this.order[objIndex].prize
-        ).toFixed(2);
-        this.order[objIndex].sum = result;
-        */
         this.order[objIndex].sum = (
           this.order[objIndex].qty * this.order[objIndex].prize
         ).toFixed(2);
@@ -62,6 +48,10 @@ new Vue({
         result = (this.order[i].prize * this.order[i].qty).toFixed(2); // candidate for computed property
         this.order[i].sum = result;
       }
+    },
+    showSubmit: function() {
+      let neat = JSON.stringify(this.order);
+      alert(neat);
     }
   },
   computed: {
@@ -69,13 +59,11 @@ new Vue({
       let result = 0;
       for (ii = 0; ii < this.order.length; ii++) {
         result += parseFloat(this.order[ii].sum);
-        // result += this.order[ii].sum.toFixed(2);
       }
       return result.toFixed(2);
     }
-    // https://www.npmjs.com/package/vue-numeric
 
-    //Subtotal is computed on two lines 44 and 33 - 34
+    //Subtotal is computed on two lines 48 and 37
     // It is not DRY and is a good candidate for a method or computed property
     // failed function attempt below
     /*

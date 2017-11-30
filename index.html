@@ -3,20 +3,18 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>The Pizza Dwelling</title>
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nunito-sans" type="text/css" />
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/acro-script" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/acro-script" type="text/css" />
   <link rel="stylesheet" href="styles.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
   <div id="vue-app">
-    <h1 id="mainHeading">The Pizza Dwelling</h1>
+    <h1>The Pizza Dwelling</h1>
     <div class="flex-container">
-
 
       <div class="box menu">
         <h2>Menu</h2>
@@ -27,15 +25,8 @@
 
       <div class="box order">
         <h2>Order</h2>
-
-      <!-- <ul v-for="(item, index) in order">
-          <li>{{item.name}} Price: {{item.prize}} Qty: {{ item.qty }} Sum: {{ item.sum }} <button v-on:click='editQty(index, 1)'>+</button> <button v-on:click='editQty(index, -1)'>-</button></li>
-        </ul>
-        <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button></span>
-      -->
-
-      <form method="post" v-on:submit.prevent>
-        <template v-for="(item, index) in order">
+        <form method="post" v-on:submit.prevent>
+          <template v-for="(item, index) in order">
             <input type="text" v-bind:value="item.name" readonly class="wide_input">
             <input type="text" v-bind:value="item.prize" readonly> x
             <input type="text" v-bind:value="item.qty" readonly>
@@ -43,14 +34,11 @@
             <button v-on:click='editQty(index, -1)'>-</button>
             <button v-on:click='editQty(index, 1)'>+</button>
             <br>
-
-        </template>
-        <br>
-        <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button>
-        <button type="submit" name="button" >Submit</button></span>
-
-      </form>
-
+          </template>
+          <br>
+          <span id="total">Total: {{ orderTotal }} <button v-on:click="order = []">Cancel</button>
+          <button type="submit" name="button" v-on:click="showSubmit">Submit</button></span>
+        </form>
       </div>
     </div>
   </div>

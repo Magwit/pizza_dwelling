@@ -31,8 +31,37 @@ li {
   position: absolute;
   top: 210px;
   left: 52px;
+  /*text-decoration: underline;*/
 }
 
 #mainHeading {
   text-align: center;
 }
+
+/*#order_form {
+  background-color: lightgray;
+}*/
+
+input {
+  /*color: deeppink;*/
+  width: 6rem;
+  border: none;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+  background-color: LightGray;
+}
+
+.menu button {
+  /*padding: 0.4rem;*/
+  position: absolute;
+  left: 10rem;
+}
+
+/*input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  width: 60px;
+}*/

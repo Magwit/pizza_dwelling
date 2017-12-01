@@ -19,16 +19,12 @@ new Vue({
   },
   methods: {
     // name, index and prize from menu item are passed as parameters
-    // In short. The order by which pizzas are added to the order determines the objIndex
-    // orderId is determined by the menu items.The first item Capriciossa is always 0 etc.
-    // objIndex is
-    // -1 means no match, in that case push the menu item to the order array
-
-    // https://www.w3schools.com/jsref/jsref_findindex.asp
-    // "The findIndex() method returns the index of the first element in an array that pass a test (provided as a function)."
     addToOrder: function(k, i, p) {
-      let objIndex = this.order.findIndex(obj => obj.orderId === i); // setting arbitrary objectIndex equal to
+      // orderId is determined by the menu items.The first item Capriciossa is always 0 etc.
+      // setting arbitrary objectIndex by the order which menu items are added to order
+      let objIndex = this.order.findIndex(obj => obj.orderId === i);
       console.log("The objIndex is " + objIndex);
+      // if no match then push menu item to order array
       if (objIndex === -1) {
         //
         this.order.push({
@@ -38,16 +34,19 @@ new Vue({
           sum: p.toFixed(2),
           orderId: i
         });
+        // if a match then increment qty on order item
       } else {
         console.log("And orderId is " + i + " already");
         console.log("now the object objIndex is " + objIndex);
         let result = 0;
         this.order[objIndex].qty++;
+        // NOTE: candidate for separate function. See else condition on editQty()
         this.order[objIndex].sum = (
           this.order[objIndex].qty * this.order[objIndex].prize
         ).toFixed(2);
       }
     },
+    // increment or decrement qty directly on order
     editQty: function(i, a) {
       console.log(a);
       this.order[i].qty += a;
@@ -55,7 +54,8 @@ new Vue({
         this.order.splice(i, 1);
       } else {
         let result = 0;
-        result = (this.order[i].prize * this.order[i].qty).toFixed(2); // candidate for computed property
+        // NOTE candidate for separate function. See else condition on addToOrder()
+        result = (this.order[i].prize * this.order[i].qty).toFixed(2);
         this.order[i].sum = result;
       }
     },
@@ -73,8 +73,7 @@ new Vue({
       return result.toFixed(2);
     }
 
-    //Subtotal is computed on two lines 48 and 37
-    // It is not DRY and is a good candidate for a method or computed property
+    // NOTE Subtotal is computed inside two separate if else statements.
     // failed function attempt below
     /*
     subTotal: function(iii) {

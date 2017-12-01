@@ -31,18 +31,9 @@ li {
   height: 40vmin;
   flex-basis: 400px;
   flex-grow: 1;
-  /*padding: 1rem;*/
-  /*padding: 15px, 1rem, 0, 1rem;*/
-  /*padding: 4vh 10vw 10vh 10vw;*/
+  margin: 1vmax;
   border: 1px solid lightgray;
   position: relative;
-}
-
-#total {
-  /*position: absolute;
-  bottom: 0.5vmax;
-  left: 0vh;*/
-  /*text-decoration: underline;*/
 }
 
 input {
@@ -61,7 +52,6 @@ button {
 }
 
 .menu button {
-  /*padding: 0.4rem;*/
   position: absolute;
-  left: 20rem;
+  left: 32vw;
 }

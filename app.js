@@ -18,10 +18,19 @@ new Vue({
     order: []
   },
   methods: {
+    // name, index and prize from menu item are passed as parameters
+    // In short. The order by which pizzas are added to the order determines the objIndex
+    // orderId is determined by the menu items.The first item Capriciossa is always 0 etc.
+    // objIndex is
+    // -1 means no match, in that case push the menu item to the order array
+
+    // https://www.w3schools.com/jsref/jsref_findindex.asp
+    // "The findIndex() method returns the index of the first element in an array that pass a test (provided as a function)."
     addToOrder: function(k, i, p) {
-      let objIndex = this.order.findIndex(obj => obj.orderId === i); // assign
+      let objIndex = this.order.findIndex(obj => obj.orderId === i); // setting arbitrary objectIndex equal to
       console.log("The objIndex is " + objIndex);
       if (objIndex === -1) {
+        //
         this.order.push({
           qty: 1,
           name: k,
@@ -30,7 +39,8 @@ new Vue({
           orderId: i
         });
       } else {
-        console.log("We have a orderId " + i + " already");
+        console.log("And orderId is " + i + " already");
+        console.log("now the object objIndex is " + objIndex);
         let result = 0;
         this.order[objIndex].qty++;
         this.order[objIndex].sum = (
